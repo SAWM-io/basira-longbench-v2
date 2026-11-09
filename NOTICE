@@ -1,0 +1,35 @@
+SAWM & Basira — LongBench v2 pilot
+Copyright (c) 2026 SAWM. Published under the MIT licence (LICENSE), except the third-party material below.
+
+-------------------------------------------------------------------------------
+LongBench v2 dataset (Apache License 2.0)
+
+The files answers/opus-5.5-alone_cot.jsonl and
+answers/opus-5.5-with-basira_rag-adaptive_cot.jsonl contain, for each of the 30
+questions, excerpts of the LongBench v2 dataset, in the fields of the official
+pred.py output: _id, domain, sub_domain, difficulty, length, question, choice_A
+to choice_D, answer, and "context". In both files, "context" holds the first
+1,000 characters of the original LongBench v2 context. (In a RAG run, pred.py
+itself would store there the first 1,000 characters of the retrieved chunks;
+here the original text's first 1,000 characters are stored in both files, and
+they are identical for all 30 questions.) These excerpts are unmodified.
+
+  LongBench v2: Towards Deeper Understanding and Reasoning on Realistic
+  Long-context Multitasks. Yushi Bai, Shangqing Tu, Jiajie Zhang, Hao Peng,
+  Xiaozhi Wang, Xin Lv, Shulin Cao, Jiazheng Xu, Lei Hou, Yuxiao Dong, Jie Tang,
+  Juanzi Li. arXiv:2412.15204, 2024.
+  Dataset: https://huggingface.co/datasets/zai-org/LongBench-v2
+           (revision 2b48e494f2c7a2f0af81aae178e05c7e1dde0fe9)
+  Project: https://longbench2.github.io
+
+Licensed under the Apache License, Version 2.0 (answers/LICENSE-Apache-2.0,
+also at http://www.apache.org/licenses/LICENSE-2.0). The other fields of these
+files (response_cot, response, pred, judge) are the outputs of Claude Opus 5.5
+and of the official scoring, published by SAWM.
+
+-------------------------------------------------------------------------------
+LongBench official code (MIT License)
+
+official/result.py is copied unchanged from https://github.com/THUDM/LongBench
+(commit 2e00731f8d0bff23dc4325161044d0ed8af94c1e).
+Copyright (c) 2023 THU-KEG & Zhipu AI. MIT License (official/LICENSE-LongBench).
